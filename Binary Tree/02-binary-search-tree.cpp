@@ -121,6 +121,13 @@ TreeNode* BST::deleteInBSTUtil(int toDelete, TreeNode *& root) {
         // find the inorder successor(which is smallest element in the right subtree of toDelete node)
         // and replace it with toDelete node and delete the swapped node;
 
+        /*you might ask why to replace with inorder successor?
+        ans is : we for sure know that the element in the right subtree of the node to delete are larger
+        and the inorder successor of the node to delete will be the smallest element in set of that right subtree
+        hence by putting it on nodeToDelete place will make sure that element in the right subtree remain greater and left subtree remain smaller.
+        
+        TIP: we can also use the inorder predecessor to replace the node when it has two chids also. */
+
         TreeNode *inorderSuccessor = minValueNode(root->right);
 
         root->val = inorderSuccessor->val;
