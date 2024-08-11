@@ -8,6 +8,8 @@ typedef pair<int, pair<int, int>> myPair;
 // To know what is MST Go on my gitsts or somewhere on internet
 // whole implementation is in cppStuff Repo
 
+// If this is really sucking you then see another efficient way below the current file.
+
 vector<myPair> primsAlgo(vector<vector<pair<int, int>>> &adjList, int n)
 {
     priority_queue<myPair, vector<myPair>, greater<myPair>> pq;
